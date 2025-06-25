@@ -9,37 +9,74 @@ import { ArrowRight, Users, Mail } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center bg-black text-white">
+    <main className="flex min-h-screen flex-col items-center bg-background text-foreground">
+      {/* Navigation */}
+      <nav className="w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="text-xl font-medium tracking-tight">S4U Inc.</div>
+            <div className="hidden md:flex items-center space-x-8">
+              <a
+                href="#services"
+                className="text-sm font-light hover:text-primary transition-colors"
+              >
+                Services
+              </a>
+              <a
+                href="#about"
+                className="text-sm font-light hover:text-primary transition-colors"
+              >
+                About
+              </a>
+              <a
+                href="#pricing"
+                className="text-sm font-light hover:text-primary transition-colors"
+              >
+                Pricing
+              </a>
+              <a
+                href="#contact"
+                className="text-sm font-light hover:text-primary transition-colors"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <HeroSection />
 
       {/* Script Analysis Tool */}
-      <section className="w-full py-20 px-4 md:px-8 lg:px-12 max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Experience Our AI Script Analysis
-        </h2>
+      <section id="services" className="w-full py-20 px-6 max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-light mb-6 tracking-tight">
+            Try Our Analysis Tool
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed">
+            Experience professional script analysis with our AI-powered tool.
+          </p>
+        </div>
         <ScriptAnalysisTool />
       </section>
 
       {/* Value Proposition */}
-      <section className="w-full py-20 px-4 md:px-8 lg:px-12 bg-zinc-900">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Why Choose Us
-          </h2>
-          <ValueProposition />
-        </div>
+      <section className="w-full py-20 px-6 bg-muted/30">
+        <ValueProposition />
       </section>
 
       {/* Testimonials */}
-      <section className="w-full py-20 px-4 md:px-8 lg:px-12 max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          What Our Clients Say
-        </h2>
+      <section className="w-full py-20 px-6 max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-light mb-6 tracking-tight">
+            Client Testimonials
+          </h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Testimonial 1 */}
-          <div className="bg-zinc-900 p-6 rounded-xl">
-            <div className="flex items-center mb-4">
+          <div className="bg-card p-8 rounded-sm border border-border">
+            <div className="flex items-center mb-6">
               <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
                 <img
                   src="https://api.dicebear.com/7.x/avataaars/svg?seed=John"
@@ -48,20 +85,21 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h4 className="font-semibold">John D.</h4>
-                <p className="text-sm text-zinc-400">Indie Filmmaker</p>
+                <h4 className="font-medium">John D.</h4>
+                <p className="text-sm text-muted-foreground font-light">
+                  Indie Filmmaker
+                </p>
               </div>
             </div>
-            <p className="text-zinc-300">
-              "The script analysis tool gave me insights I never would have
-              considered. It helped me refine my dialogue and strengthen my
-              character arcs."
+            <p className="text-muted-foreground font-light leading-relaxed">
+              "The analysis provided insights I hadn't considered. It helped
+              refine my dialogue and strengthen character development."
             </p>
           </div>
 
           {/* Testimonial 2 */}
-          <div className="bg-zinc-900 p-6 rounded-xl">
-            <div className="flex items-center mb-4">
+          <div className="bg-card p-8 rounded-sm border border-border">
+            <div className="flex items-center mb-6">
               <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
                 <img
                   src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
@@ -70,20 +108,21 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h4 className="font-semibold">Sarah M.</h4>
-                <p className="text-sm text-zinc-400">YouTube Creator</p>
+                <h4 className="font-medium">Sarah M.</h4>
+                <p className="text-sm text-muted-foreground font-light">
+                  Content Creator
+                </p>
               </div>
             </div>
-            <p className="text-zinc-300">
-              "I've been able to produce content twice as fast with the help of
-              this tool. The AI suggestions are spot-on and the human feedback
-              adds that extra layer of quality."
+            <p className="text-muted-foreground font-light leading-relaxed">
+              "Fast turnaround with professional quality feedback. The
+              combination of AI and human expertise is excellent."
             </p>
           </div>
 
           {/* Testimonial 3 */}
-          <div className="bg-zinc-900 p-6 rounded-xl">
-            <div className="flex items-center mb-4">
+          <div className="bg-card p-8 rounded-sm border border-border">
+            <div className="flex items-center mb-6">
               <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
                 <img
                   src="https://api.dicebear.com/7.x/avataaars/svg?seed=Raj"
@@ -92,91 +131,74 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h4 className="font-semibold">Raj P.</h4>
-                <p className="text-sm text-zinc-400">Ad Agency Director</p>
+                <h4 className="font-medium">Raj P.</h4>
+                <p className="text-sm text-muted-foreground font-light">
+                  Agency Director
+                </p>
               </div>
             </div>
-            <p className="text-zinc-300">
-              "Our agency has seen a 40% increase in client satisfaction since
-              we started using this service. The turnaround time is incredible."
+            <p className="text-muted-foreground font-light leading-relaxed">
+              "Significant improvement in client satisfaction. The detailed
+              analysis helps us deliver better results."
             </p>
           </div>
         </div>
       </section>
 
       {/* Pricing Tiers */}
-      <section className="w-full py-20 px-4 md:px-8 lg:px-12 bg-zinc-900">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Choose Your Plan
-          </h2>
-          <p className="text-center text-zinc-400 mb-12 max-w-2xl mx-auto">
-            Select the perfect plan for your scriptwriting needs. Upgrade or
-            downgrade anytime.
-          </p>
-          <PricingTiers />
-        </div>
+      <section id="pricing" className="w-full py-20 px-6 bg-muted/30">
+        <PricingTiers />
       </section>
 
       {/* About Us */}
-      <section className="w-full py-20 px-4 md:px-8 lg:px-12 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <section id="about" className="w-full py-20 px-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">About Us</h2>
-            <p className="text-zinc-300 mb-6">
-              We're on a mission to democratize access to professional-grade
-              story feedback. Based in Gurgaon, our team combines deep expertise
-              in storytelling with cutting-edge AI technology.
+            <h2 className="text-3xl md:text-4xl font-light mb-8 tracking-tight">
+              About S4U Inc.
+            </h2>
+            <p className="text-muted-foreground mb-6 font-light leading-relaxed">
+              We provide professional script analysis services combining
+              industry expertise with advanced AI technology. Our mission is to
+              help storytellers refine their craft through actionable feedback.
             </p>
-            <p className="text-zinc-300 mb-6">
-              Our unique approach blends human creativity with AI efficiency,
-              giving you the best of both worlds. We understand the challenges
-              storytellers face and have built a solution that addresses them
-              head-on.
+            <p className="text-muted-foreground mb-8 font-light leading-relaxed">
+              Our team of experienced script readers and AI specialists work
+              together to deliver comprehensive analysis that helps writers
+              improve their storytelling.
             </p>
-            <Button className="bg-purple-600 hover:bg-purple-700">
-              Learn More About Us <ArrowRight className="ml-2 h-4 w-4" />
+            <Button className="bg-primary hover:bg-primary/90 rounded-sm font-medium">
+              Learn More <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {/* Team Member 1 */}
             <div className="text-center">
-              <div className="h-32 w-32 rounded-full overflow-hidden mx-auto mb-4">
+              <div className="h-24 w-24 rounded-sm overflow-hidden mx-auto mb-4 bg-muted">
                 <img
-                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Eshan"
-                  alt="Eshan Parekh"
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Team1"
+                  alt="Team Member"
                   className="h-full w-full object-cover"
                 />
               </div>
-              <h4 className="font-semibold">Eshan Parekh</h4>
-              <p className="text-sm text-zinc-400">Founder</p>
+              <h4 className="font-medium mb-1">Script Analysis</h4>
+              <p className="text-sm text-muted-foreground font-light">
+                Expert Readers
+              </p>
             </div>
 
             {/* Team Member 2 */}
             <div className="text-center">
-              <div className="h-32 w-32 rounded-full overflow-hidden mx-auto mb-4">
+              <div className="h-24 w-24 rounded-sm overflow-hidden mx-auto mb-4 bg-muted">
                 <img
-                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sankalp"
-                  alt="Sankalp Chaturvedi"
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Team2"
+                  alt="Team Member"
                   className="h-full w-full object-cover"
                 />
               </div>
-              <h4 className="font-semibold">Sankalp Chaturvedi</h4>
-              <p className="text-sm text-zinc-400">Filmmaker, Founding Team</p>
-            </div>
-
-            {/* Team Member 3 */}
-            <div className="text-center">
-              <div className="h-32 w-32 rounded-full overflow-hidden mx-auto mb-4">
-                <img
-                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarthak"
-                  alt="Sarthak Chaturvedi"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <h4 className="font-semibold">Sarthak Chaturvedi</h4>
-              <p className="text-sm text-zinc-400">
-                AI Product Owner, Founding Team
+              <h4 className="font-medium mb-1">AI Technology</h4>
+              <p className="text-sm text-muted-foreground font-light">
+                Development Team
               </p>
             </div>
           </div>
@@ -184,22 +206,22 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-20 px-4 md:px-8 lg:px-12 bg-gradient-to-r from-purple-900 to-purple-700">
+      <section className="w-full py-20 px-6 bg-primary/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Transform Your Scripts?
+          <h2 className="text-3xl md:text-4xl font-light mb-6 tracking-tight">
+            Ready to Get Started?
           </h2>
-          <p className="text-xl mb-8">
-            Join thousands of storytellers who are elevating their craft with
-            our AI-powered script analysis.
+          <p className="text-lg text-muted-foreground mb-8 font-light leading-relaxed">
+            Join writers and filmmakers who trust S4U Inc. for professional
+            script analysis.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button className="bg-white text-purple-900 hover:bg-gray-100 text-lg py-6 px-8">
-              Try Free Analysis
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-sm px-8 py-3">
+              Start Analysis
             </Button>
             <Button
               variant="outline"
-              className="border-white text-white hover:bg-white/10 text-lg py-6 px-8"
+              className="border-border hover:bg-muted font-medium rounded-sm px-8 py-3"
             >
               View Pricing
             </Button>
@@ -208,149 +230,90 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="w-full py-12 px-4 md:px-8 lg:px-12 bg-zinc-950">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <footer id="contact" className="w-full py-16 px-6 border-t border-border">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             {/* Company Info */}
-            <div className="col-span-1 md:col-span-2">
-              <h3 className="text-2xl font-bold mb-4">ScriptSense AI</h3>
-              <p className="text-zinc-400 mb-6">
-                An AI-augmented scriptwriting agency helping storytellers refine
-                ideas and elevate screenplays.
+            <div>
+              <h3 className="text-xl font-medium mb-4 tracking-tight">
+                S4U Inc.
+              </h3>
+              <p className="text-muted-foreground mb-6 font-light leading-relaxed">
+                Professional script analysis services combining industry
+                expertise with AI technology.
               </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-zinc-400 hover:text-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                  </svg>
-                </a>
-                <a href="#" className="text-zinc-400 hover:text-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect
-                      x="2"
-                      y="2"
-                      width="20"
-                      height="20"
-                      rx="5"
-                      ry="5"
-                    ></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                  </svg>
-                </a>
-                <a href="#" className="text-zinc-400 hover:text-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                  </svg>
-                </a>
-              </div>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2">
+              <h4 className="font-medium mb-4">Services</h4>
+              <ul className="space-y-3">
                 <li>
-                  <a href="#" className="text-zinc-400 hover:text-white">
-                    Home
+                  <a
+                    href="#services"
+                    className="text-muted-foreground hover:text-foreground font-light transition-colors"
+                  >
+                    Script Analysis
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-zinc-400 hover:text-white">
-                    About Us
+                  <a
+                    href="#about"
+                    className="text-muted-foreground hover:text-foreground font-light transition-colors"
+                  >
+                    About
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-zinc-400 hover:text-white">
-                    Solutions
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-zinc-400 hover:text-white">
+                  <a
+                    href="#pricing"
+                    className="text-muted-foreground hover:text-foreground font-light transition-colors"
+                  >
                     Pricing
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-zinc-400 hover:text-white">
-                    Contact
                   </a>
                 </li>
               </ul>
             </div>
 
-            {/* Solutions */}
+            {/* Contact */}
             <div>
-              <h4 className="font-semibold mb-4">Solutions</h4>
-              <ul className="space-y-2">
+              <h4 className="font-medium mb-4">Contact</h4>
+              <ul className="space-y-3">
                 <li>
-                  <a href="#" className="text-zinc-400 hover:text-white">
-                    For Hobbyists
+                  <a
+                    href="mailto:hello@s4u.inc"
+                    className="text-muted-foreground hover:text-foreground font-light transition-colors"
+                  >
+                    hello@s4u.inc
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-zinc-400 hover:text-white">
-                    For YouTube Creators
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-zinc-400 hover:text-white">
-                    For Ad Agencies
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-zinc-400 hover:text-white">
-                    For OTT Studios
-                  </a>
+                  <span className="text-muted-foreground font-light">
+                    Professional Services
+                  </span>
                 </li>
               </ul>
             </div>
           </div>
 
-          <Separator className="bg-zinc-800 mb-8" />
+          <Separator className="mb-8" />
 
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-zinc-500 text-sm mb-4 md:mb-0">
-              &copy; 2023 ScriptSense AI. All rights reserved.
+            <p className="text-muted-foreground text-sm mb-4 md:mb-0 font-light">
+              &copy; 2024 S4U Inc. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-zinc-500 hover:text-white text-sm">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-foreground text-sm font-light transition-colors"
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="text-zinc-500 hover:text-white text-sm">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-foreground text-sm font-light transition-colors"
+              >
                 Terms of Service
-              </a>
-              <a href="#" className="text-zinc-500 hover:text-white text-sm">
-                Cookie Policy
               </a>
             </div>
           </div>

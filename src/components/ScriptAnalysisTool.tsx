@@ -102,17 +102,18 @@ const ScriptAnalysisTool = ({
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto bg-background p-6 rounded-xl border border-border">
-      <Card>
-        <CardHeader className="text-center">
-          <CardTitle className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-green-400 bg-clip-text text-transparent">
-            AI Script Analysis Tool
-          </CardTitle>
-          <CardDescription className="text-muted-foreground max-w-2xl mx-auto">
-            Upload your script or enter your ideas to get instant feedback. Our
-            AI will analyze your content and provide valuable insights.
-          </CardDescription>
-        </CardHeader>
+    <div className="w-full max-w-4xl mx-auto bg-card p-8 rounded-sm border border-border">
+      <div className="text-center mb-8">
+        <h3 className="text-2xl md:text-3xl font-light mb-4 tracking-tight">
+          Script Analysis Tool
+        </h3>
+        <p className="text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed">
+          Upload your script or enter your ideas to receive professional
+          feedback and actionable insights.
+        </p>
+      </div>
+      <Card className="border-0 shadow-none bg-transparent">
+        <CardHeader className="px-0 pb-6"></CardHeader>
         <CardContent>
           <Tabs
             value={activeTab}
@@ -169,7 +170,7 @@ const ScriptAnalysisTool = ({
               </div>
             </TabsContent>
 
-            <div className="mt-6">
+            <div className="mt-8">
               <Button
                 onClick={handleAnalyze}
                 disabled={
@@ -177,7 +178,7 @@ const ScriptAnalysisTool = ({
                   (activeTab === "text" && !scriptText.trim()) ||
                   (activeTab === "upload" && !file)
                 }
-                className="w-full bg-gradient-to-r from-purple-500 to-green-500 hover:from-purple-600 hover:to-green-600 text-white"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-sm"
                 size="lg"
               >
                 {isAnalyzing ? "Analyzing..." : "Analyze Script"}

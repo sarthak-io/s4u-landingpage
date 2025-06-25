@@ -30,15 +30,15 @@ interface PricingTier {
 
 const PricingTiers = ({ tiers = defaultTiers }: { tiers?: PricingTier[] }) => {
   return (
-    <section className="w-full py-16 px-4 md:px-8 bg-background">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Choose Your Plan
+    <section className="w-full py-20 px-6 bg-background">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-light mb-6 tracking-tight">
+            Pricing Plans
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Select the perfect plan for your scriptwriting needs. Upgrade
-            anytime as your projects grow.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed">
+            Choose the plan that fits your needs. All plans include our core
+            analysis features.
           </p>
         </div>
 
@@ -46,24 +46,26 @@ const PricingTiers = ({ tiers = defaultTiers }: { tiers?: PricingTier[] }) => {
           {tiers.map((tier, index) => (
             <Card
               key={index}
-              className={`flex flex-col h-full border ${tier.popular ? "border-primary shadow-lg relative" : "border-border"}`}
+              className={`flex flex-col h-full border rounded-sm ${tier.popular ? "border-primary relative" : "border-border"}`}
             >
               {tier.popular && (
-                <Badge className="absolute -top-3 right-4 bg-primary text-primary-foreground">
-                  Most Popular
+                <Badge className="absolute -top-3 left-6 bg-primary text-primary-foreground rounded-sm">
+                  Recommended
                 </Badge>
               )}
-              <CardHeader>
-                <CardTitle className="text-2xl">{tier.name}</CardTitle>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">{tier.price}</span>
+              <CardHeader className="pb-4">
+                <CardTitle className="text-xl font-medium">
+                  {tier.name}
+                </CardTitle>
+                <div className="mt-6">
+                  <span className="text-3xl font-light">{tier.price}</span>
                   {tier.priceDetail && (
-                    <span className="text-muted-foreground ml-2">
+                    <span className="text-muted-foreground ml-2 font-light">
                       {tier.priceDetail}
                     </span>
                   )}
                 </div>
-                <CardDescription className="mt-4">
+                <CardDescription className="mt-4 font-light">
                   {tier.description}
                 </CardDescription>
               </CardHeader>
@@ -89,7 +91,7 @@ const PricingTiers = ({ tiers = defaultTiers }: { tiers?: PricingTier[] }) => {
               </CardContent>
               <CardFooter>
                 <Button
-                  className={`w-full ${tier.popular ? "bg-primary hover:bg-primary/90" : ""}`}
+                  className={`w-full rounded-sm font-medium ${tier.popular ? "bg-primary hover:bg-primary/90" : ""}`}
                   variant={tier.popular ? "default" : "outline"}
                 >
                   {tier.buttonText}

@@ -30,13 +30,15 @@ interface PricingTier {
 
 const PricingTiers = ({ tiers = defaultTiers }: { tiers?: PricingTier[] }) => {
   return (
-    <section className="w-full py-20 px-6 bg-background">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-20 px-6 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-green-900/10 via-transparent to-green-800/5" />
+      <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-green-500/30 to-transparent" />
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light mb-6 tracking-tight">
-            Pricing Plans
+            <span className="gradient-text">Pricing</span> Plans
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-lg text-green-200/70 max-w-2xl mx-auto font-light leading-relaxed">
             Choose the plan that fits your needs. All plans include our core
             analysis features.
           </p>
@@ -46,10 +48,10 @@ const PricingTiers = ({ tiers = defaultTiers }: { tiers?: PricingTier[] }) => {
           {tiers.map((tier, index) => (
             <Card
               key={index}
-              className={`flex flex-col h-full border rounded-sm ${tier.popular ? "border-primary relative" : "border-border"}`}
+              className={`flex flex-col h-full rounded-lg relative overflow-hidden ${tier.popular ? "gradient-card border-green-500/50 shadow-lg shadow-green-500/10" : "gradient-card"}`}
             >
               {tier.popular && (
-                <Badge className="absolute -top-3 left-6 bg-primary text-primary-foreground rounded-sm">
+                <Badge className="absolute -top-3 left-6 bg-gradient-to-r from-green-600 to-green-500 text-white rounded-sm border border-green-400/50">
                   Recommended
                 </Badge>
               )}
@@ -91,7 +93,7 @@ const PricingTiers = ({ tiers = defaultTiers }: { tiers?: PricingTier[] }) => {
               </CardContent>
               <CardFooter>
                 <Button
-                  className={`w-full rounded-sm font-medium ${tier.popular ? "bg-primary hover:bg-primary/90" : ""}`}
+                  className={`w-full rounded-sm font-medium transition-all duration-200 ${tier.popular ? "bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white border-green-400/30 hover:shadow-lg hover:shadow-green-500/25" : "border-green-500/30 text-green-300 hover:bg-green-900/20 hover:border-green-400/50"}`}
                   variant={tier.popular ? "default" : "outline"}
                 >
                   {tier.buttonText}
